@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da Adivinhação</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      background-color: rgb(255, 255, 255);
+    }
+
+    input {
+      background-color: black;
+      border: 2px solid rgb(15, 7, 117);
+      border-radius: 10px;
+      padding: 10px;
+      margin: 10px;
+      color: aliceblue;
+    }
+
+    button {
+      color: aliceblue;
+      background-color: black;
+      border: 2px solid rgb(15, 7, 117);
+      padding: 10px;
+      margin: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: rgb(15, 7, 117);
+      transition: background-color 0.3s;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Adivinhe o Número!</h1>
+  <p>Estou pensando em um número entre 1 e 100.</p>
+  <input type="number" id="guess" placeholder="Seu palpite">
+  <button id="submit">Enviar</button>
+  <p id="result"></p>
+  <script>
+    const randomNumber = Math.floor(Math.random() * 100) + 1;
+    const resultDisplay = document.getElementById("result");
+    const submitButton = document.getElementById("submit");
+
+    submitButton.addEventListener("click", () => {
+      const userGuess = Number(document.getElementById("guess").value);
+
+      if (userGuess === randomNumber) {
+        resultDisplay.textContent = "Parabéns! Você adivinhou o número!";
+      } else if (userGuess < randomNumber) {
+        resultDisplay.textContent = "Muito baixo! Tente novamente.";
+      } else {
+        resultDisplay.textContent = "Muito alto! Tente novamente.";
+      }
+    });
+  </script>
+</body>
+
+</html>
