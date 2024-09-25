@@ -7,7 +7,7 @@ const num = parseInt(prompt("digite o seu numero"));
             soma += i;
         }
    
-        alert('A soma dos nmeros ímpares ate ${numero} é: ${soma}');
+        alert('A soma dos numeros ímpares ate ${numero} é: ${soma}');
     }else{
         alert("por favor digite um numero valido");
     }
